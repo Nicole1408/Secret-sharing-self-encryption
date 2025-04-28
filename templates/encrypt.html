@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>encryption GUI</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="container">
+        <form action="/do_encrypt" method="post" enctype = "multipart/form-data">
+
+            <label for="n_chunks">num_chunks:</label>
+            <input type="text" value="10" id="n_chunks" name="n_chunks"><br>
+    
+            <label for="n_secret_pieces">number of pieces:</label>
+            <input type="text" value="5" id="n_secret_pieces" name="n_secret_pieces"><br>
+    
+            <label for="security_level">security level:</label>
+            <input type="text" value="3" id="security_level" name="security_level"><br>
+    
+            <label for="sharingUnits">Sharing Units:</label>
+            <input type="text"  value="Alice-Bill-Celina-Dell-Ellen" id="sharingUnits" name="sharingUnits"><br>
+    
+            <label for="userName">username:</label>
+            <input type="text" value="EEMCS" id="userName" name="userName"><br>
+    
+            <label for="userID">user id:</label>
+            <input type="text" value="10088" id="userID" name="userID"><br>
+
+            <label for="algorithm">algorithm:</label>
+            <input type="text" id="algorithm" name="algorithm"><br>
+    
+            <input type = "file" name = "file" />
+    
+            <input id="submit" type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decryption GUI</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="container">
+        <form action="/do_decrypt" method="post">
+
+            <label for="key">key for decryption:</label>
+            <input type="text" value="10" id="key" name="key"><br>
+    
+            <label for="userName">user Name:</label>
+            <input type="text" value="EEMCS" id="userName" name="userName"><br>
+    
+            <label for="userID">user ID:</label>
+            <input type="text" value="10088" id="userID" name="userID"><br>
+    
+            <label for="num_chunks">num_chunks:</label>
+            <input type="text" value="10" id="num_chunks" name="num_chunks"><br>
+
+            <label for="chunk_file_name">chunk_file_name (optional):</label>
+            <input type="text" value="chunks.txt" id="chunk_file_name" name="chunk_file_name"><br>
+
+            <label for="secret_shares">secret_shares (if you don't have the full key):</label>
+            <textarea id="secret_shares"  name="secret_shares"></textarea>
+
+            <label for="properties">properties (if you don't have the full key):</label>
+            <textarea id="properties" name="properties"></textarea>
+
+            <label for="transaction_num">transaction_num (if you don't have the full key):</label>
+            <input type="text" id="transaction_num" name="transaction_num"><br>
+
+            <label for="algorithm">algorithm:</label>
+            <input type="text" id="algorithm" name="algorithm"><br>
+    
+            <input id="submit" type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>

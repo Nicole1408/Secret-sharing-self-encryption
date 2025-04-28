@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "nginx"
+  name: test-ingress-rule
+  namespace: tango-development
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - k8s-cluster.tango.rid-intrasoft.eu
+    secretName: test-rest-cert-tls
+  rules:
+  - host: k8s-cluster.tango.rid-intrasoft.eu
+    http:
+      paths:
+      - backend:
+          service:
+            name: test-module-rest
+            port:
+              number: 80
+        path: /development/test-rest(/|$)(.*)
+        pathType: ImplementationSpecific
